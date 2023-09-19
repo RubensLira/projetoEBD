@@ -1,0 +1,58 @@
+Criar Tabelas {
+    Alunos {
+        Nome,
+        Data de Nascimento,
+        Data de Entrada,
+        Data de Saída,
+        Total de Presenças,
+        Total de Ausências,
+        Tem Lição
+    }
+    Mês {
+        Nome,
+        1º Semana,
+        2º Semana,
+        3º Semana,
+        4º Semana,
+        5º Semana # Se houver
+    }
+    CREATE DATABASE teste
+    DEFAULT CHARACTER SET utf8
+    DEFAULT COLLATE utf8_general_ci;
+
+    use teste;
+create table alunos (
+	id int(11) not null auto_increment,
+	nome varchar(30) not null,
+    data_entrada date not null,
+    sala varchar(30) not null,
+    primary key (id)
+) default charset utf8;
+
+create table frequencia_4tri_2023 (
+	id_aluno int(11) not null auto_increment,
+	nome varchar(30) not null,
+	primeira enum('V','F'),
+    segunda enum('V','F'),
+    terceira enum('V','F'),
+    quarta enum('V','F'),
+    primary key (id aluno);
+    foreign key (id_aluno) references alunos(id),
+) default charset utf8;
+}
+
+Páginas {
+    Home,
+    Edição,
+    Chamada da Semana,
+    Login, # HTML Finalizado
+    Cadastro, # HTML Finalizado
+    Sobre
+}
+
+Design {
+    Cabeçaho,
+    Main,
+    Rodapé,
+    Responsividade
+}
