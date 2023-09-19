@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+    include_once('../php/protect.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,7 +23,7 @@
                 <li><a href="../../">Home</a></li>
                 <li><a href="chamada.php">Chamada</a></li>
                 <li><a href="">Sobre</a></li>
-                <li><a href="../config/logout.php">Sair</a></li>
+                <li><a href="../php/logout.php">Sair</a></li>
             </ul>
         </section>
     </header>
