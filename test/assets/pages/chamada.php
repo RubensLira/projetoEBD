@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="../css/homeStyle.css">
         <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script defer src="../js/ajax.js"></script>
+        <script defer src="../js/chamada.js"></script>
 </head>
 <body id="body">
     <header>
@@ -57,8 +58,6 @@
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
                 </select>
             </form>
         </section>
@@ -70,10 +69,10 @@
                             <th scope="col">#</th>
                             <th scope="col">Nome</th>
                             <th scope="col">Sala</th>
-                            <th scope="col">Semana 1</th>
-                            <th scope="col">Semana 2</th>
-                            <th scope="col">Semana 3</th>
-                            <th scope="col">Semana 4</th>
+                            <th class="col1" scope="col">Semana 1</th>
+                            <th class="col2" scope="col">Semana 2</th>
+                            <th class="col3" scope="col">Semana 3</th>
+                            <th class="col4" scope="col">Semana 4</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -85,8 +84,8 @@
                             echo "<td>" . $user_data['id'] . "</td>";
                             echo "<td>" . $user_data['nome'] . "</td>";
                             echo "<td>" . $user_data['sala'] . "</td>";
-                            echo "<td>
-                            <select name='primeira[$id]' id='primeira'>";
+                            echo "<td class='col1'>
+                            <select name='primeira[$id]' id='primeira' class='col1'>";
                                 $selectedP = ($user_data['primeira'] == 'P') ? 'selected' : '';
                                 $selectedF = ($user_data['primeira'] == 'F') ? 'selected' : '';
                                 echo "<option $selectedP value=''>---</option>";
@@ -94,8 +93,8 @@
                                 echo "<option $selectedF value='F'>F</option>";
                             echo "</select>
                             </td>";
-                            echo "<td>
-                            <select name='segunda[$id]' id='segunda'>";
+                            echo "<td class='col2'>
+                            <select name='segunda[$id]' id='segunda' class='col2'>";
                                 $selectedP2 = ($user_data['segunda'] == 'P') ? 'selected' : '';
                                 $selectedF2 = ($user_data['segunda'] == 'F') ? 'selected' : '';
                                 echo "<option $selectedP value=''>---</option>";
@@ -103,8 +102,8 @@
                                 echo "<option $selectedF2 value='F'>F</option>";
                             echo "</select>
                             </td>";
-                            echo "<td>
-                            <select name='terceira[$id]' id='terceira'>";
+                            echo "<td class='col3'>
+                            <select name='terceira[$id]' id='terceira' class='col3'>";
                                 $selectedP3 = ($user_data['terceira'] == 'P') ? 'selected' : '';
                                 $selectedF3 = ($user_data['terceira'] == 'F') ? 'selected' : '';
                                 echo "<option $selectedP value=''>---</option>";
@@ -112,8 +111,8 @@
                                 echo "<option $selectedF3 value='F'>F</option>";
                             echo "</select>
                             </td>";
-                            echo "<td>
-                            <select name='quarta[$id]' id='quarta'>";
+                            echo "<td class='col4'>
+                            <select name='quarta[$id]' id='quarta' class='col4'>";
                                 $selectedP4 = ($user_data['quarta'] == 'P') ? 'selected' : '';
                                 $selectedF4 = ($user_data['quarta'] == 'F') ? 'selected' : '';
                                 echo "<option $selectedP value=''>---</option>";
@@ -126,8 +125,15 @@
                     ?>
                     </tbody>
                 </table>
-                <input type="submit" name="submit" value="Atualizar">
+                <input type="submit" name="submit" id="submit" value="Atualizar">
             </form>
+            <section>
+                <span><strong>Ocultar:</strong></span>
+                <label for="checkCol1">Semana 1 <input type="checkbox" id="checkCol1"></label>
+                <label for="checkCol1">Semana 2 <input type="checkbox" id="checkCol2"></label>
+                <label for="checkCol2">Semana 3 <input type="checkbox" id="checkCol3"></label>
+                <label for="checkCol3">Semana 4 <input type="checkbox" id="checkCol4"></label>
+            </section>
         </section>
     </main>
 </body>

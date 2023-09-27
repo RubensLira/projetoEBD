@@ -10,14 +10,14 @@
             <li><a href="assets/pages/chamada.php">Chamada</a></li>
             <li><a href="assets/pages/matricula.php">Matrícula</a></li>
             <li><a href="">Sobre</a></li>
-            <li><a href="assets/config/logout.php">Sair</a></li>
+            <li><a href="assets/php/logout.php">Sair</a></li>
         </ul>
     </section>
 </header>
 <main>
     <section id="titulo">
         <?php
-            include_once('assets/config/protect.php');
+            include_once('assets/php/protect.php');
             echo "<h1>Seja Bem-Vindo " . $_SESSION['usuario'] . "</h1>";
             $sql_code = "SELECT * FROM alunos ORDER BY nome";
             $sql_query = $mysqli->query($sql_code);
